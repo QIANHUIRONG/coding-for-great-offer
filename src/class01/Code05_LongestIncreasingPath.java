@@ -1,5 +1,11 @@
 package class01;
 
+/*
+题目：给定一个二维数组matrix，你可以从任何位置出发，走向上、下、左、右四个方向，返回能走出来的最长的递增链长度
+时间：
+时间复杂度：
+是否属于高频内容打包课：是
+ */
 public class Code05_LongestIncreasingPath {
 
 	public static int longestIncreasingPath1(int[][] matrix) {

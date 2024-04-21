@@ -2,6 +2,12 @@ package class01;
 
 import java.util.HashMap;
 
+/*
+题目：给定一个数组arr，你可以在每个数字之前决定+或者-但是必须所有数字都参与，再给定一个数target，请问最后算出target的方法数
+时间：
+时间复杂度：
+是否属于高频内容打包课：是
+ */
 // leetcode 494题
 public class Code07_TargetSum {
 
