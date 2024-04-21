@@ -2,6 +2,12 @@ package class02;
 
 import java.util.HashMap;
 
+/*
+题目：设计有setAll功能的哈希表，put、get、setAll方法，时间复杂度O(1)
+时间：44
+时间复杂度：
+是否属于高频内容打包课：是
+ */
 public class Code05_SetAll {
 
 	public static class MyValue<V> {

@@ -2,12 +2,20 @@ package class03;
 
 import java.util.Arrays;
 
-// 给定一个数组arr，代表每个人的能力值。再给定一个非负数k。
-// 如果两个人能力差值正好为k，那么可以凑在一起比赛，一局比赛只有两个人
-// 返回最多可以同时有多少场比赛
+/*
+题目：给定一个数组arr，代表每个人的能力值。再给定一个非负数k，如果两个人能力差值正好为k，那么可以凑在一起比赛 一局比赛只有两个人，返回最多可以同时有多少场比赛
+时间：27
+时间复杂度：
+是否属于高频内容打包课：是
+ */
 public class Code04_MaxPairNumber {
 
-	// 暴力解
+	/**
+	 * 方法1：暴力解
+	 * @param arr
+	 * @param k
+	 * @return
+	 */
 	public static int maxPairNum1(int[] arr, int k) {
 		if (k < 0) {
 			return -1;
@@ -39,11 +47,18 @@ public class Code04_MaxPairNumber {
 		arr[j] = tmp;
 	}
 
-	// 时间复杂度O(N*logN)
+	/**
+	 * 方法2：窗口
+	 * 时间复杂度O(N*logN)
+	 * @param arr
+	 * @param k
+	 * @return
+	 */
 	public static int maxPairNum2(int[] arr, int k) {
 		if (k < 0 || arr == null || arr.length < 2) {
 			return 0;
 		}
+		// 1.排序
 		Arrays.sort(arr);
 		int ans = 0;
 		int N = arr.length;
@@ -53,7 +68,7 @@ public class Code04_MaxPairNumber {
 		while (L < N && R < N) {
 			if (usedR[L]) {
 				L++;
-			} else if (L >= R) {
+			} else if (L == R) {
 				R++;
 			} else { // 不止一个数，而且都没用过！
 				int distance = arr[R] - arr[L];

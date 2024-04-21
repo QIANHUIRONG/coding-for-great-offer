@@ -1,6 +1,12 @@
 package class03;
 
 // 本题测试链接 : https://leetcode.com/problems/longest-substring-without-repeating-characters/
+/*
+题目：求一个字符串中，最长无重复字符子串长度
+时间：49
+时间复杂度：O(N)
+是否属于高频内容打包课：是
+ */
 public class Code01_LongestSubstringWithoutRepeatingCharacters {
 
 	public static int lengthOfLongestSubstring(String s) {

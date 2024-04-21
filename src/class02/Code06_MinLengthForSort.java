@@ -1,6 +1,12 @@
 package class02;
 
 // 本题测试链接 : https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
+/*
+题目：给定一个数组arr，只能对arr中的一个子数组排序，但是想让arr整体都有序，返回满足这一设定的子数组中最短的是多长
+时间：26
+时间复杂度：O（1）；空间：O(1)
+是否属于高频内容打包课：是
+ */
 public class Code06_MinLengthForSort {
 
 	public static int findUnsortedSubarray(int[] nums) {

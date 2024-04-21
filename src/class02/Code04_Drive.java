@@ -2,6 +2,12 @@ package class02;
 
 import java.util.Arrays;
 
+/*
+题目：让所有司机获得总体最多收入的分配问题.现有司机N*2人，调度中心会将所有司机平分给A、B两区域，i号司机去A可得收入为income[i][0]，去B可得收入为income[i][1] 返回能使所有司机总收入最高的方案是多少钱?
+时间：2：05
+时间复杂度：
+是否属于高频内容打包课：是
+ */
 public class Code04_Drive {
 
 	// 课上的现场版本
@@ -13,7 +19,7 @@ public class Code04_Drive {
 			return 0;
 		}
 		int N = income.length; // 司机数量一定是偶数，所以才能平分，A N /2 B N/2
-		int M = N >> 1; // M = N / 2 要去A区域的人
+		int M = N / 2 ; // M = N / 2 要去A区域的人
 		return process1(income, 0, M);
 	}
 
