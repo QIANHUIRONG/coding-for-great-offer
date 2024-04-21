@@ -4,13 +4,20 @@ import java.util.HashMap;
 
 /*
 题目：给定一个数组arr，你可以在每个数字之前决定+或者-但是必须所有数字都参与，再给定一个数target，请问最后算出target的方法数
-时间：
+时间：1：00
 时间复杂度：
 是否属于高频内容打包课：是
  */
 // leetcode 494题
 public class Code07_TargetSum {
 
+	/**
+	 * 方法1：暴力递归法
+	 *
+	 * @param arr
+	 * @param s
+	 * @return
+	 */
 	public static int findTargetSumWays1(int[] arr, int s) {
 		return process1(arr, 0, s);
 	}
@@ -27,14 +34,19 @@ public class Code07_TargetSum {
 		return process1(arr, index + 1, rest - arr[index]) + process1(arr, index + 1, rest + arr[index]);
 	}
 
+	/**
+	 * 方法2：傻缓存法
+	 *
+	 * @param arr
+	 * @param s
+	 * @return
+	 */
 	public static int findTargetSumWays2(int[] arr, int s) {
 		return process2(arr, 0, s, new HashMap<>());
 	}
 
 	public static int process2(int[] arr, int index, int rest, HashMap<Integer, HashMap<Integer, Integer>> dp) {
-		if (dp.containsKey(index) && dp.get(index).containsKey(rest)) {
-			return dp.get(index).get(rest);
-		}
+
 		// 否则，没命中！
 		int ans = 0;
 		if (index == arr.length) {
@@ -78,6 +90,14 @@ public class Code07_TargetSum {
 	// 求有多少方法组成7，其实就是求有多少种达到累加和(7+11)/2=9的方法
 	// 优化点五 :
 	// 二维动态规划的空间压缩技巧
+
+	/**
+	 * 方法3：从业务上继续找到优化点
+	 *
+	 * @param arr
+	 * @param target
+	 * @return
+	 */
 	public static int findTargetSumWays(int[] arr, int target) {
 		int sum = 0;
 		for (int n : arr) {
