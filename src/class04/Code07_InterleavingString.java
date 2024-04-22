@@ -1,6 +1,12 @@
 package class04;
 
 // 本题测试链接 : https://leetcode.com/problems/interleaving-string/
+/*
+题目：给定三个字符串s1、s2、s3，请你帮忙验证s3是否是由s1和s2交错组成的
+时间：1：27
+时间复杂度：
+是否属于高频内容打包课：是
+ */
 public class Code07_InterleavingString {
 
 	public static boolean isInterleave(String s1, String s2, String s3) {
@@ -29,20 +35,8 @@ public class Code07_InterleavingString {
 		}
 		for (int i = 1; i <= str1.length; i++) {
 			for (int j = 1; j <= str2.length; j++) {
-				if (
-						(str1[i - 1] == str3[i + j - 1] && dp[i - 1][j])
-						
-						
-						
-						
-						|| 
-						
-						
-						
-						(str2[j - 1] == str3[i + j - 1] && dp[i][j - 1])
-						
-						
-						) {
+				if ((str1[i - 1] == str3[i + j - 1] && dp[i - 1][j])
+						|| (str2[j - 1] == str3[i + j - 1] && dp[i][j - 1])) {
 					dp[i][j] = true;
 				}
 			}

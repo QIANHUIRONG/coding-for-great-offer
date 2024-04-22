@@ -1,6 +1,12 @@
 package class04;
 
 // 本题测试链接 : https://leetcode.com/problems/maximum-subarray/
+/*
+题目：返回一个数组中子数组最大累加和
+时间：15
+时间复杂度：O（N)
+是否属于高频内容打包课：是
+ */
 public class Code02_SubArrayMaxSum {
 
 	public static int maxSubArray(int[] arr) {

@@ -1,6 +1,14 @@
 package class07;
 
 // 本题测试链接 : https://leetcode.com/problems/binary-tree-cameras/
+
+/*
+题目：给定一个二叉树，我们在树的节点上安装摄像头，节点上的每个摄影头都可以监视：
+		其父对象、自身及其直接子对象 计算监控树的所有节点所需的最小摄像头数量
+时间：28。贪心的优化版本：55
+时间复杂度：
+是否属于高频内容打包课：是
+ */
 public class Code02_MinCameraCover {
 
 	public static class TreeNode {
@@ -9,6 +17,11 @@ public class Code02_MinCameraCover {
 		public TreeNode right;
 	}
 
+	/**
+	 * 方法1：二叉树递归套路。O（N)
+	 * @param root
+	 * @return
+	 */
 	public static int minCameraCover1(TreeNode root) {
 		Info data = process1(root);
 		return (int) Math.min(data.uncovered + 1, Math.min(data.coveredNoCamera, data.coveredHasCamera));
@@ -30,6 +43,9 @@ public class Code02_MinCameraCover {
 	// 所有可能性都穷尽了
 	public static Info process1(TreeNode X) {
 		if (X == null) { // base case
+			// 空树直接认为被覆盖了，所以放一个系统最大。所以你是空树，不存在没被覆盖的情况，给你一个系统最大
+			// 空树认为没相机且直接被覆盖，给你个0。
+			// 空树也没办法放相机，所以放一个系统最大
 			return new Info(Integer.MAX_VALUE, 0, Integer.MAX_VALUE);
 		}
 
@@ -67,6 +83,12 @@ public class Code02_MinCameraCover {
 		return new Info(uncovered, coveredNoCamera, coveredHasCamera);
 	}
 
+
+	/**
+	 * 优化2：贪心的优化版本
+	 * @param root
+	 * @return
+	 */
 	public static int minCameraCover2(TreeNode root) {
 		Data data = process2(root);
 		return data.cameras + (data.status == Status.UNCOVERED ? 1 : 0);

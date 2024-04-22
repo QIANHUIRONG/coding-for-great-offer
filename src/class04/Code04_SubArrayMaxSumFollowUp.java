@@ -1,6 +1,14 @@
 package class04;
 
 // 在线测试链接 : https://leetcode.com/problems/house-robber/
+/*
+题目：返回一个数组中所选数字不能相邻的情况下最大子序列累加和
+时间：42
+时间复杂度：
+是否属于高频内容打包课：是
+就是打家劫舍！
+从左往右的尝试模型
+ */
 public class Code04_SubArrayMaxSumFollowUp {
 
 	public static int rob1(int[] arr) {

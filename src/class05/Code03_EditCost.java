@@ -1,7 +1,22 @@
 package class05;
 
+/*
+题目：编辑距离问题
+时间：1：07
+时间复杂度：
+是否属于高频内容打包课：是
+ */
 public class Code03_EditCost {
 
+	/**
+	 * 方法1：经典动态规划
+	 * @param s1
+	 * @param s2
+	 * @param ic
+	 * @param dc
+	 * @param rc
+	 * @return
+	 */
 	public static int minCost1(String s1, String s2, int ic, int dc, int rc) {
 		if (s1 == null || s2 == null) {
 			return 0;
@@ -28,6 +43,15 @@ public class Code03_EditCost {
 		return dp[N - 1][M - 1];
 	}
 
+	/**
+	 * 方法2：空间压缩
+	 * @param str1
+	 * @param str2
+	 * @param ic
+	 * @param dc
+	 * @param rc
+	 * @return
+	 */
 	public static int minCost2(String str1, String str2, int ic, int dc, int rc) {
 		if (str1 == null || str2 == null) {
 			return 0;

@@ -2,14 +2,22 @@ package class07;
 
 import java.util.HashSet;
 
+/*
+题目：使用单词表拼接单词的方法数
+	假设所有字符都是小写字母，大字符串是str，arr是去重的单词表,
+	每个单词都不是空字符串且可以使用任意次。使用arr中的单词有多少种拼接str的方式，返回方法数
+时间：1：47
+时间复杂度：
+是否属于高频内容打包课：是
+ */
 public class Code05_WorldBreak {
-	/*
-	 * 
-	 * 假设所有字符都是小写字母. 大字符串是str. arr是去重的单词表, 每个单词都不是空字符串且可以使用任意次.
-	 * 使用arr中的单词有多少种拼接str的方式. 返回方法数.
-	 * 
-	 */
 
+	/**
+	 * 方法1：暴力递归
+	 * @param str
+	 * @param arr
+	 * @return
+	 */
 	public static int ways(String str, String[] arr) {
 		HashSet<String> set = new HashSet<>();
 		for (String candidate : arr) {
@@ -21,7 +29,7 @@ public class Code05_WorldBreak {
 	// 所有的可分解字符串，都已经放在了set中
 	// str[i....] 能够被set中的贴纸分解的话，返回分解的方法数
 	public static int process(String str, int i, HashSet<String> set) {
-		if (i == str.length()) { // 没字符串需要分解了！
+		if (i == str.length()) { // 没字符串需要分解了，需要一种方法，这种方法叫做啥也不用 / 收集到了一种方法叫做之前做过的决定
 			return 1;
 		}
 		//  i....还有字符串需要分解
@@ -36,6 +44,12 @@ public class Code05_WorldBreak {
 		return ways;
 	}
 
+	/**
+	 * 方法1：暴力递归。这个也是暴力递归，和上面的一模一样
+	 * @param str
+	 * @param arr
+	 * @return
+	 */
 	public static int ways1(String str, String[] arr) {
 		if (str == null || str.length() == 0 || arr == null || arr.length == 0) {
 			return 0;
@@ -60,6 +74,12 @@ public class Code05_WorldBreak {
 		return ways;
 	}
 
+	/**
+	 * 方法2：动态规划
+	 * @param str
+	 * @param arr
+	 * @return
+	 */
 	public static int ways2(String str, String[] arr) {
 		if (str == null || str.length() == 0 || arr == null || arr.length == 0) {
 			return 0;
@@ -91,6 +111,13 @@ public class Code05_WorldBreak {
 		}
 	}
 
+	/**
+	 * 方法3：带前缀树的暴力递归
+	 * 时间复杂度：O（M）[建前缀树] + O（N^2)
+	 * @param str
+	 * @param arr
+	 * @return
+	 */
 	public static int ways3(String str, String[] arr) {
 		if (str == null || str.length() == 0 || arr == null || arr.length == 0) {
 			return 0;
@@ -113,7 +140,6 @@ public class Code05_WorldBreak {
 	}
 
 	// str[i...] 被分解的方法数，返回
-
 	public static int g(char[] str, Node root, int i) {
 		if (i == str.length) {
 			return 1;
@@ -134,6 +160,12 @@ public class Code05_WorldBreak {
 		return ways;
 	}
 
+	/**
+	 * 带前缀树的动态规划
+	 * @param s
+	 * @param arr
+	 * @return
+	 */
 	public static int ways4(String s, String[] arr) {
 		if (s == null || s.length() == 0 || arr == null || arr.length == 0) {
 			return 0;
