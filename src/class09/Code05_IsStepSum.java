@@ -2,6 +2,13 @@ package class09;
 
 import java.util.HashMap;
 
+/**
+ * 题意：定义何为step sum？比如680，680 + 68 + 6 = 754，680的step sum叫754
+ * 	给定一个正数num，判断它是不是某个数的step sum
+ * 时间：9
+ * 时间复杂度：O（logN)
+ * 是否属于高频内容打包课：是
+ */
 public class Code05_IsStepSum {
 
 	public static boolean isStepSum(int stepSum) {

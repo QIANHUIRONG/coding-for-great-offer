@@ -1,5 +1,12 @@
 package class09;
 
+
+/*
+题目：给定一个数组arr，求最长递增子序列长度
+时间：z
+时间复杂度：O（n*logn)
+是否属于高频内容打包课：是
+ */
 // 本题测试链接 : https://leetcode.com/problems/longest-increasing-subsequence
 public class Code03_LIS {
 

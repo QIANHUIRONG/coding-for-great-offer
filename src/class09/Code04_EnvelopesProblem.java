@@ -4,6 +4,16 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 // 本题测试链接 : https://leetcode.com/problems/russian-doll-envelopes/
+
+/*
+题目：给你一个二维整数数组 envelopes ，其中 envelopes[i] = [wi, hi] ，表示第 i 个信封的宽度和高度，当另一个信封的宽度和高度都比这个信封大的时候，
+	这个信封就可以放进另一个信封里，如同俄罗斯套娃一样。请计算 最多能有多少个 信封能组成一组“俄罗斯套娃”信封（即可以把一个信封放到另一个信封里面）注意：
+	不允许旋转信封
+时间：2：47
+时间复杂度：O(N)
+是否属于高频内容打包课：是
+
+ */
 public class Code04_EnvelopesProblem {
 
 	public static int maxEnvelopes(int[][] matrix) {
