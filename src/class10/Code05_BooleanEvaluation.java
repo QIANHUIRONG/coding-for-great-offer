@@ -1,6 +1,14 @@
 package class10;
 
 // 本题测试链接 : https://leetcode-cn.com/problems/boolean-evaluation-lcci/
+/*
+题目：给定一个布尔表达式和一个期望的布尔结果 result，布尔表达式由
+	0 (false)、1 (true)、& (AND)、 | (OR) 和 ^ (XOR) 符号组成。
+	实现一个函数，算出有几种可使该表达式得出 result 值的括号方法。
+时间：2：25
+时间复杂度：
+是否属于高频内容打包课：是
+ */
 public class Code05_BooleanEvaluation {
 
 	public static int countEval0(String express, int desired) {
